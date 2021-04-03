@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="main()"><!--this makes it so that main() function runs once page is loaded-->
+    <canvas id="canvasA" style="margin-left:-21vmin"></canvas>
+    <canvas id="canvasPiano" style="margin-left:-21vmin;background:none;"></canvas>
+    <canvas id="canvasB" style= "margin-left:-21vmin;background:none;"></canvas>
+    
+    <canvas id="canvasHitTest" style= "margin-left:41vmin;width:38vmin;height:38vmin;margin-top:21vmin"></canvas>
+    
+    <canvas id="canvasBg" onclick="captureBackground()" style= "margin-left:41vmin;width:38vmin;height:38vmin;margin-top:-21vmin;cursor:pointer;"></canvas>
+    <script src=main.js></script>
+    
+    <pre id="overlay" onclick="removeOverlay()" style="margin-left:-21vmin">
+    </pre>
+    
+</body>
