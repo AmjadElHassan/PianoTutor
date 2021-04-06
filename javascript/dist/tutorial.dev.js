@@ -1,14 +1,12 @@
 "use strict";
 
-var size = 500; //using this makes our canvas sizing incredibly more customizable
+//refresh the page and watch our painting change!!
+var size = 600; //using this makes our canvas sizing incredibly more customizable
 //why? because my canvas AND its contents are entirely in-proportion thanks to the .scale() method we will see later on
 
-var canvas; //universal variable to represent our canvas
-//Now keep in mind, the main() function and drawscene() functions are composed of 
-//multiple individually defined functions. this allow me to compartmentalize 
-//many different aspects of this 'drawing'
-//to get the most out of this as a teaching tool
-//begin your analysis at line 49: the 'drawHouse' function
+var canvas; //universal variable to represent our single canvas, when we overlay canvases atop each other we will have multiple canvas variables representing different canvases
+//Now keep in mind, the main() function and drawscene() functions are composed of multiple individually defined functions. this allows me to consolidate many different aspects of this 'drawing' into small readable chunks
+//to get the most out of this as a teaching tool begin your analysis at line 48: the 'drawHouse' function, and then arrive back at the main functions to see how they all fit together
 
 function main() {
   //this will load all our components
@@ -136,7 +134,7 @@ function drawBackground(ctx) {
 }
 
 function randomizeColor() {
-  //to get a random color, we will use math.random() to create random values to plug in as rgba values
+  //to get a random color, we will use math.random() to create random values to plug in as rgba values. we'll use this for the roofs
   var red = Math.floor(Math.random() * 255);
   var green = Math.floor(Math.random() * 255);
   var blue = Math.floor(Math.random() * 255);
@@ -151,8 +149,5 @@ function initializeCanvas(canvasName, width, height) {
   return canvas;
 }
 
-function removeOverlay() {
-  //when activated, will remove out overlay from the canvas
-  var element = document.getElementById('overlay');
-  element.style.display = "none";
+function removeOverlay() {//when activated, will remove overlay 
 }
