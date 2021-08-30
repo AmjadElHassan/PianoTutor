@@ -7,6 +7,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="canvas tut">
     <link rel="stylesheet" href="css/dist/main.css">
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Piano Tutor">
+    <meta itemprop="image"
+        content="https://images-platform.99static.com//1hGTm3LSR5iOfjb_LWMpEBB3osE=/724x69:1224x569/fit-in/590x590/projects-files/67/6799/679973/66619b13-5cac-432c-8ffb-5b8728c30985.png">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://amjadelhassan.github.io/PianoTutor/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Amjad Elhassan | Portfolio">
+    <meta property="og:image"
+        content="https://images-platform.99static.com//1hGTm3LSR5iOfjb_LWMpEBB3osE=/724x69:1224x569/fit-in/590x590/projects-files/67/6799/679973/66619b13-5cac-432c-8ffb-5b8728c30985.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Piano Tutor">
+    <meta name="twitter:image"
+        content="https://images-platform.99static.com//1hGTm3LSR5iOfjb_LWMpEBB3osE=/724x69:1224x569/fit-in/590x590/projects-files/67/6799/679973/66619b13-5cac-432c-8ffb-5b8728c30985.png">
 </head>
 
 <body onload="main()">
@@ -31,7 +47,7 @@
         </div>
         <div id="explanation">
             <h2>System Design</h2>
-            
+
             <p> The entire application uses nothing but vanilla javascript,html, and the tools provided by our browser.
                 we are using different canvases to layer different interactive layers and create our AR application.
                 It may seem that there are 3 canvases (or "windows") on our screen but there are actually 5. our largest
@@ -72,12 +88,15 @@
 
                 The explanation of our middle layer explains how we manage mouse events, but how are we able to trigger
                 appropriate functions with our camera? This takes us to the heart of our application, which is visual
-                hit detection. This app requires a "beginning" image. it is called our background image and we can set it by clicking the bottom-right canvas.
-                we are able to detect hits by comparing the differences between the images being streamed to canvasA and the background image we stored.
+                hit detection. This app requires a "beginning" image. it is called our background image and we can set
+                it by clicking the bottom-right canvas.
+                we are able to detect hits by comparing the differences between the images being streamed to canvasA and
+                the background image we stored.
             </p>
 
             <p>
-                In all the places of the image where there is not a match, we can draw those non-matching pixels onto our top-most
+                In all the places of the image where there is not a match, we can draw those non-matching pixels onto
+                our top-most
                 canvas. This is especially important because, it allows our finger to appear on top of a button.
                 remember that our piano keys are drawn on TOP of our camera stream canvas. So, even if we hovered our
                 finger over the buttons, it would still appear behind the buttons, so doing it this way, allows the user
