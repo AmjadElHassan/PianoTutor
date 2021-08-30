@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas Tutorial</title>
+    <meta name="description" content="learn canvas">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="canvas tut">
+    <link rel="stylesheet" href="css/dist/main.css">
+</head>
+
+<body onload="main()">
+    <!--when page load, create canvas elements-->
+    <h1>Welcome To<br> Piano Tutor</h1>
+    <main>
+        <div class='canvases'>
+            <div id="forPiano">
+                <canvas id="canvasA" style="width: 25rem;height:25rem"></canvas>
+                <canvas id="pianoCanvas" style="width: 25rem; height:25rem;background: none"></canvas>
+                <canvas id="canvasB" style="width: 25rem; height:25rem; background: none"></canvas>
+            </div>
+            <div id="smallCans">
+                <canvas id="hitCanvas" style="width: 12.5rem; height:11rem"></canvas>
+                <canvas id="bgCanvas" style="width: 12.5rem; height:11rem"></canvas>
+
+            </div>
+            <!-- <div>
+                <canvas id="canvasC"></canvas>
+                <p>Canvas C)<br>Displays color of canvas B Button when its corresponding canvas A button is pressed</p>
+            </div> -->
+        </div>
+        <div id="explanation">
+            <h2>System Design</h2>
+            
+            <p> The entire application uses nothing but vanilla javascript,html, and the tools provided by our browser.
+                we are using different canvases to layer different interactive layers and create our AR application.
+                It may seem that there are 3 canvases (or "windows") on our screen but there are actually 5. our largest
+                canvas element is actually 3 canvases layed on top of each other.
+            </p>
+
+            <p>
+                the bottom-layer canvas, canvasA, is where we send the image data from our camera. our application will
+                update the image of canvasA with the image Data supplied by our camera every 30 miliseconds.
+            </p>
+
+            <p>
+                The next layer (the middle layer) is the piano layer. It is where we display and draw the
+                piano keys that our users will interact with. Unlike more common javascript strategies, we can NOT
+                assign individual eventListeners to things we draw on our canvas element. This means I cannot express
+                functions as a result of the typical javascript event listener method, because javascript cannot
+                interpret
+                these canvas images as buttons. this presents a problem that requires some creativity to solve.
+            </p>
+
+            <p>
+                we solve this issue of interactivity through the creation of our hit-canvas, the
+                upper-right window. If we hover over the main window with our mouse, we will see that we have a small
+                circle that follows our movement on the hit-canvas. that is our relative mouse-location of our main
+                canvas being applied
+                to our hit canvas.
+                so, we create a function that detects if the pixel that our mouse location is hovering over
+                matches a color of one of our buttons in the hit-canvas. if it is a match, we will trigger callback
+                functions.
+                similarly, if we detect a click and the relative position of our mouse is on the color of a button on
+                our hit canvas,
+                we can program proper responses for that particular button. this is how we are able to solve the issue
+                of interacting with our piano without being able to apply
+                traditional javascript eventListeners directly to drawn buttons of our canvas.
+            </p>
+
+            <p>
+
+                The explanation of our middle layer explains how we manage mouse events, but how are we able to trigger
+                appropriate functions with our camera? This takes us to the heart of our application, which is visual
+                hit detection. This app requires a "beginning" image. it is called our background image and we can set it by clicking the bottom-right canvas.
+                we are able to detect hits by comparing the differences between the images being streamed to canvasA and the background image we stored.
+            </p>
+
+            <p>
+                In all the places of the image where there is not a match, we can draw those non-matching pixels onto our top-most
+                canvas. This is especially important because, it allows our finger to appear on top of a button.
+                remember that our piano keys are drawn on TOP of our camera stream canvas. So, even if we hovered our
+                finger over the buttons, it would still appear behind the buttons, so doing it this way, allows the user
+                to more intuitively operate the application. our hit-pixels are also expressed in our hit-canvas, as you
+                can observe. When a difference in visual composition is detected over a button, we will trigger
+                the appropriate responses, which in this case, is to play a sound, and highlight the button red.
+            </p>
+
+        </div>
+
+        <!-- <h2>Explanation</h2>
+        <hr>
+        <p class="explain">The magic here, is that through modular programming, I created a working button system for my canvas.
+            This might seem exceedingly simple, but this is because html already has an in-place button system that is super intutive and built very well to work with javascript.
+            However, HTML Canvas does not have such a system in place. if I want to display working interactive buttons, I have to create my button system through javascript.<br>
+            <br>
+            This particular system is able to recognize buttons by comparing the color of the pixel that my my cursor is hovering over, to the background color of my canvases; In this case white.
+            as you move your cursor, if you are on a non-white space, the cursor changes into an index hand pointer. This gives an important clue to the user as well, that these areas are for their interaction.<br>
+            If you click on a button, and the color isn't white, it will display that color onto Canvas C.
+            <br><br>
+            Now as a developer, what is truly useful, is that through only altering my simple top-function called main(), you can make,alter, and apply any kind of button onto any canvas and in any location inside each of the canvases.
+            Through modular programming, we create functions to use as tools to let us automate the making and placing of working buttons. I don't have to draw every single button from scratch each time.
+            I am able to plug in a few key values, and produce exceptionally different results. Any other developer you work with will find it infinitely more easy to undertand how your program works, than if
+            you were to manually hard-code each and every button in a big jumbled mess of repetitive lines of code for each button</p>>
+            
+            
+    </main> -->
+        <script src="javascript/buttonHandler.js"></script>
+</body>

@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  background: #7373ee;
+}
+body h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "New Tegomin";
+}
+body main {
+  width: 100%;
+  height: 100%;
+  margin-top: 5rem;
+}
+body main .canvases {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 1;
+}
+body main .canvases #forPiano {
+  height: 100%;
+}
+body main .canvases #forPiano #pianoCanvas, body main .canvases #forPiano #canvasB {
+  display: block;
+  position: absolute;
+}
+body main .canvases #smallCans {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body main .canvases div {
+  display: flex;
+  flex-direction: column;
+}
+body main .canvases div canvas {
+  background-color: white;
+  margin: 1.5rem;
+}
+body main h2 {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.25rem;
+  border: solid 2px black;
+}
+body main #explanation {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 2rem;
+  align-items: center;
+  font-size: 1.2rem;
+  width: 100%;
+}
+body main #explanation p {
+  text-indent: 20px;
+  margin-top: 2rem;
+  text-align: left;
+  width: 80%;
+}
