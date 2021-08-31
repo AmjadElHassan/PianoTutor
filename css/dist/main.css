@@ -148,3 +148,6 @@ body main #explanation p {
   text-align: left;
   width: 80%;
 }
+body main ol li {
+  margin-bottom: 1rem;
+}
